@@ -33,11 +33,21 @@ def parse_nudity(nude_list):
             count = sum(1 for _ in re.finditer(r'\b(%s)\b' % re.escape(word), nude_str))
             word_dict[word] += count
     
+    score = 0
+    total = 0
+    for pair in wordlist:
+        score += (word_dict[pair['keyword']] * pair['weight'])
+        total += word_dict[pair['keyword']]
+
+    
     for _, word in enumerate(word_dict):
         print('{0}: {1}'.format(word, word_dict[word]))
     
 
         
     print(word_dict)
+    print('score: {0}'.format(score))
+    print('total: {0}'.format(total))
+    prob = score / total
 
-    return False, 1
+    return prob > 0.75, prob

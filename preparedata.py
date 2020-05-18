@@ -7,7 +7,7 @@ movies = []
 rate_limit = 30
 limit_count = 0
 
-with open('radarr-export.csv', newline='') as csvfile:
+with open('import.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for row in spamreader:
         print(row)
