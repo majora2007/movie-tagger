@@ -1,0 +1,12 @@
+nudity: 1
+nude: 1
+topless: 1
+completly naked: 1
+naked: 1
+full frontal genitalia: 1
+breasts: 1
+penises: 1
+penis: 1
+nipples: 1
+no nudity: -1
+briefly: -0.2

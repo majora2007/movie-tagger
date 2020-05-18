@@ -1,0 +1,2 @@
+# Nudity Tagger
+The purpose of this script is to identify if a movie or show has nudity and tag it via Plex interface. This is great for keeping Nudity out of the hands of kids accounts when some ratings are misleading or incorrect.
