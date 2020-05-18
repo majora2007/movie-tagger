@@ -11,7 +11,7 @@ def fetch_nudity_info(id, media_type):
         url = movie_parental_sex_url.format(id)
     else:
         raise NotImplementedError('Show lookup isn\'t implemented')
-    print(url)
+    
     body = requests.get(url).content
 
     page = html.fromstring(body)

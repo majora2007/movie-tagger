@@ -2,15 +2,30 @@ from imdb import IMDb, helpers
 
 import scraper
 import parse
+import csv
+import time
 
 
 
 
-nudity_info = scraper.fetch_nudity_info('0356150', 'movie')
-print('Nudity: {0}'.format(nudity_info))
+#nudity_info = scraper.fetch_nudity_info('0356150', 'movie')
+#print('Nudity: {0}'.format(nudity_info))
 
-is_nudity, nudity_score = parse.parse_nudity(nudity_info)
-print('Is Nudity: {0}. Possiblity Correct: {1}'.format(is_nudity, nudity_score))
+#is_nudity, nudity_score = parse.parse_nudity(nudity_info)
+#print('Is Nudity: {0}. Possiblity Correct: {1}'.format(is_nudity, nudity_score))
+
+
+
+with open('movies.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile, delimiter='|', quotechar='"')
+    next(reader, None)  # skip the headers
+    for row in reader:
+        if len(row) is 2:
+            is_nudity, nudity_score = parse.parse_nudity(row[1])
+            print('Movie: {0}'.format(row[0]))
+            print('Is Nudity: {0}. Possiblity Correct: {1}'.format(is_nudity, nudity_score))
+
+
 
 
 
