@@ -10,6 +10,13 @@ class Test_TestParse(unittest.TestCase):
         is_nudity, nudity_score = parse.parse_nudity(nude_info)
         self.assertEqual(is_nudity, True)
         self.assertEqual(nudity_score, 1)
+
+    def test_parse_count_word(self):
+        nude_info = ['Masha is having sex with Sasha in the car.', 
+                    'One scene takes place in the city baths where we can see dozens of completly naked women, including Iya and Masha.', 
+                    'About 50 women in an area take a bath together. All of the women are completely naked. Genitals and breasts are briefly visible.']
+        word_dict = parse.count_words(nude_info)
+        self.assertEqual(word_dict['naked'], 2)
     
     #def test_parse_nudity_2(self):
         # Eurotrip: 0356150
