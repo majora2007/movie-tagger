@@ -13,7 +13,6 @@ def read_movie_list(filename):
     with open(filename, newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
         for row in spamreader:
-            print(row)
             if limit_count == rate_limit:
                 break
                 #time.sleep(10)
@@ -41,4 +40,4 @@ def generate_movie_nudity_csv_from_file(inputFile, outputFile):
     movies = read_movie_list(inputFile)
     write_movies_with_nude_info_to_csv(movies, outputFile)
 
-# generate_movie_nudity_csv_from_file('import_non_nude.csv', 'non_nude_movies.csv')
+generate_movie_nudity_csv_from_file('import_nude.csv', 'nude_movies.csv')
