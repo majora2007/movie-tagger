@@ -41,7 +41,7 @@ oauthlib==3.1.0
 opt-einsum==3.1.0
 peewee==3.13.1
 pefile==2019.4.18
-Pillow==7.1.2
+Pillow==9.0.1
 protobuf==3.11.3
 psutil==5.7.0
 pyasn1==0.4.8
