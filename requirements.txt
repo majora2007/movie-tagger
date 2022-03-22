@@ -36,7 +36,7 @@ lxml==4.6.5
 Markdown==3.1.1
 mccabe==0.6.1
 mutagen==1.44.0
-numpy==1.18.4
+numpy==1.21.0
 oauthlib==3.1.0
 opt-einsum==3.1.0
 peewee==3.13.1
